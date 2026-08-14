@@ -48,10 +48,8 @@
         </div>
 
         <aside class="definition-card">
-          <strong>Cooling degree days (CDD)</strong>
-          <p>
-            measure how much and for how long temperatures exceed 21°C,
-            or approximately 70°F.
+          
+          <p><strong>Cooling degree days (CDD)</strong> measure accumulated warmth above 21°C or approximately 70°F. Higher CDD values indicate greater potential need for cooling.
           </p>
         </aside>
 
@@ -69,18 +67,14 @@
           <h2>Rising temperatures will increase urban cooling needs</h2>
 
           <p>
-            As global warming increases from 1.5°C to 3°C, cities are
-            projected to require more cooling. Across the cities in the
-            dataset, average annual cooling degree days rise between the
-            scenarios.
+            As global warming increases from 1.5°C to 3°C, average annual cooling demand across the cities in the dataset rises from about 1,149 to 1,325 cooling degree days, an increase of roughly 176 °C-days. This suggests that even relatively small increases in global warming can translate into substantially greater cooling needs for cities.
           </p>
         </div>
 
         <div class="chart-column">
 
           <p class="chart-caption">
-            Average cooling demand across cities rises as global warming
-            increases from 1.5°C to 3°C
+            Average cooling demand rises by about 176 °C-days between 1.5°C and 3°C warming
           </p>
 
           <div class="tableau-frame">
@@ -88,7 +82,7 @@
     id="overallCoolingViz"
     src="https://public.tableau.com/views/Book1_17854585823250/D01OverallCoolingDemand"
     width="100%"
-    height="520px"
+    height="540px"
     toolbar="hidden"
     hide-tabs>
   </tableau-viz>
@@ -98,66 +92,87 @@
       </div>
     </section>
 
-    <section class="story-section">
-      <div class="page-container two-column regional-layout">
+   <section class="story-section">
+  <div class="page-container">
 
-        <div class="story-copy">
-          <h2>Cooling demand rises unevenly across regions</h2>
+    <!-- TOP ROW -->
+    <div class="regional-two-column">
 
-          <p>
-            Cooling demand rises in every region, but the starting levels
-            differ dramatically. Regions with higher baselines may face
-            sustained pressure, while others may experience faster growth.
-          </p>
+      <div class="story-copy">
+        <h2>Regional cooling demand rises unevenly</h2>
 
-          <div class="callout">
-            Regional averages reveal broad patterns, but they can hide
-            important differences between individual cities.
-          </div>
+        <p>
+          Cooling demand rises across every region, but regions begin from very
+          different baselines. South Asia and Sub-Saharan Africa remain among the
+          highest-demand regions across warming scenarios, while Europe & Central
+          Asia starts from a much lower level.
+        </p>
+      </div>
+
+      <div class="chart-column">
+
+        <p class="chart-caption">
+          Regions begin from very different cooling baselines
+        </p>
+
+        <div class="tableau-frame regional-line-chart">
+          <tableau-viz
+  id="regionalCoolingViz"
+  src="https://public.tableau.com/views/Book1_17854585823250/D02RegionalCoolingDemand"
+  width="100%"
+  height="360px"
+  device="desktop"
+  hide-tabs
+  toolbar="hidden">
+</tableau-viz>
         </div>
 
-        <div class="chart-column">
+        <p class="regional-takeaway">
+          Regional averages reveal broad patterns—but they can mask major
+          differences between individual cities.
+        </p>
 
-          <p class="chart-caption">
-            Regions begin from very different cooling baselines
-          </p>
+      </div>
 
-          <div class="tableau-frame">
-    <tableau-viz
-      id="regionalCoolingViz"
-      src="https://public.tableau.com/views/Book1_17854585823250/D02RegionalCoolingDemand"
-      width="100%"
-      height="627"
-      hide-tabs
-      toolbar="hidden">
-    </tableau-viz>
-  </div>
-
-  <div class="regional-followup">
-
-    <div class="followup-text">
-      <h3>Where cooling demand grows most</h3>
-      <p>
-        Looking at the increase from 1.5°C to 3°C makes it easier to see
-        which regions face the largest additional cooling demand.
-      </p>
     </div>
 
-    <div class="tableau-frame compact-chart">
-      <tableau-viz
-        id="regionalIncreaseViz"
-        src="https://public.tableau.com/views/Book1_17854585823250/D03RegionalCDDIncrease"
-        width="100%"
-        height="250"
-        hide-tabs
-        toolbar="hidden">
-      </tableau-viz>
+
+    <!-- SECOND ROW -->
+    <div class="regional-secondary-row">
+
+      <div class="regional-secondary-copy">
+        <h3>Where cooling demand grows most</h3>
+
+        <p>
+          Comparing the increase from 1.5°C to 3°C shows which regions face
+          the largest additional cooling demand.
+        </p>
+      </div>
+
+      <div class="chart-column">
+
+        <p class="chart-caption">
+          Increase in annual cooling degree days from 1.5°C to 3°C
+        </p>
+
+        <div class="tableau-frame compact-chart">
+          <tableau-viz
+  id="regionalIncreaseViz"
+  src="https://public.tableau.com/views/Book1_17854585823250/D03RegionalCDDIncrease"
+  width="100%"
+  height="250px"
+  device="desktop"
+  hide-tabs
+  toolbar="hidden">
+</tableau-viz>
+        </div>
+
+      </div>
+
     </div>
 
   </div>
-
-</div>
-    </section>
+</section>
 
     <section class="story-section">
       <div class="page-container scatter-layout">
@@ -173,7 +188,7 @@
     id="cityPressureViz"
     src="https://public.tableau.com/views/Book1_17854585823250/D04CityCoolingPressure"
     width="100%"
-    height="700"
+    height="647"
     hide-tabs
     toolbar="hidden">
   </tableau-viz>
@@ -192,8 +207,7 @@
           </p>
 
           <div class="method-note">
-            Cities are grouped relative to the dataset medians for existing
-            cooling demand and projected increase.
+            Pressure types are defined relative to the dataset medians for current demand and future increase.
           </div>
         </div>
 
@@ -275,18 +289,22 @@
       </div>
     </section>
 
-    <section class="story-section final-response">
+   <section class="story-section final-response">
 
   <div class="page-container final-grid">
 
+    <!-- LEFT COLUMN -->
     <div class="story-copy">
+
       <p>
         The cities that may feel rising heat most are not defined by
         one measure alone. Effective planning must reflect both current
         cooling burdens and the pressures emerging under higher warming.
       </p>
 
-      <h2>Different risk patterns call for different local responses</h2>
+      <h2>
+        Different risk patterns call for different local responses
+      </h2>
 
       <p>
         These projections identify patterns of climate exposure, not a
@@ -294,48 +312,263 @@
         consider infrastructure capacity, population vulnerability,
         cooling access, and available resources.
       </p>
+
     </div>
 
-    <div class="response-grid">
 
-      <article class="response-card">
-        <h3>Compounding Pressure</h3>
-        <p>Bamako, Mali</p>
-        <strong>Grid capacity + equitable cooling</strong>
-      </article>
+    <!-- RIGHT COLUMN -->
+    <div class="pressure-quadrant">
 
-      <article class="response-card">
-        <h3>Emerging Pressure</h3>
-        <p>Jember, Indonesia</p>
-        <strong>Early codes + future energy planning</strong>
-      </article>
+      <!-- vertical axis -->
+      <div class="vertical-axis">
+        <span class="axis-high">High</span>
 
-      <article class="response-card">
-        <h3>Persistent Pressure</h3>
-        <p>Karachi, Pakistan</p>
-        <strong>Efficiency + affordability</strong>
-      </article>
+        <div class="vertical-axis-line"></div>
 
-      <article class="response-card">
-        <h3>Lower Relative Pressure</h3>
-        <p>Berlin, Germany</p>
-        <strong>Monitoring + preventive planning</strong>
-      </article>
+        <span class="vertical-axis-title">
+          Increase in Cooling Demand
+        </span>
+
+        <span class="axis-low">Low</span>
+      </div>
+
+
+      <!-- horizontal axis -->
+      <div class="horizontal-axis">
+        <span class="axis-low">Low</span>
+
+        <div class="horizontal-axis-line left-line"></div>
+
+        <span class="horizontal-axis-title">
+          Current Cooling Demand
+        </span>
+
+        <div class="horizontal-axis-line right-line"></div>
+
+        <span class="axis-high">High</span>
+      </div>
+
+
+     <!-- EMERGING PRESSURE -->
+<article class="response-card flip-card emerging emerging-card">
+
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+
+      <div>
+        <p class="card-label">Emerging Pressure</p>
+
+        <h3>Jember, Indonesia</h3>
+
+        <p>
+          Current cooling demand may be more moderate,
+          but projected increases point to growing future pressure.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        See response →
+      </button>
+
+    </div>
+
+
+    <div class="flip-card-back">
+
+      <div>
+        <p class="card-label">Local Response</p>
+
+        <h3>Early codes + future energy planning</h3>
+
+        <p>
+          Use building standards, passive cooling strategies,
+          and long-term energy planning before higher cooling
+          demand becomes more difficult and costly to manage.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        ← Back
+      </button>
 
     </div>
 
   </div>
 
-  <div class="page-container">
-    <div class="story-conclusion">
-      <p class="conclusion-label">The takeaway</p>
+</article>
 
-      <p class="conclusion-text">
-        There is no one-size-fits-all cooling strategy. Cities need
-        responses that reflect both their current burden and the
-        pressures emerging under higher warming.
-      </p>
+
+<!-- COMPOUNDING PRESSURE -->
+<article class="response-card flip-card compounding compounding-card">
+
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+
+      <div>
+        <p class="card-label">Compounding Pressure</p>
+
+        <h3>Bamako, Mali</h3>
+
+        <p>
+          High existing cooling demand combines with strong future
+          growth, creating multiple layers of heat pressure.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        See response →
+      </button>
+
     </div>
+
+
+    <div class="flip-card-back">
+
+      <div>
+        <p class="card-label">Local Response</p>
+
+        <h3>Grid capacity + equitable cooling</h3>
+
+        <p>
+          Strengthen energy infrastructure while expanding reliable
+          and affordable access to cooling for the most heat-exposed
+          populations.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        ← Back
+      </button>
+
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- LOWER RELATIVE PRESSURE -->
+<article class="response-card flip-card lower-pressure lower-card">
+
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+
+      <div>
+        <p class="card-label">Lower Relative Pressure</p>
+
+        <h3>Berlin, Germany</h3>
+
+        <p>
+          Cooling demand remains lower relative to hotter cities,
+          but future warming can still introduce new challenges.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        See response →
+      </button>
+
+    </div>
+
+
+    <div class="flip-card-back">
+
+      <div>
+        <p class="card-label">Local Response</p>
+
+        <h3>Monitoring + preventive planning</h3>
+
+        <p>
+          Track changing heat conditions and invest early in passive
+          cooling, shade, building adaptation, and heat-response planning.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        ← Back
+      </button>
+
+    </div>
+
+  </div>
+
+</article>
+
+
+<!-- PERSISTENT PRESSURE -->
+<article class="response-card flip-card persistent persistent-card">
+
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+
+      <div>
+        <p class="card-label">Persistent Pressure</p>
+
+        <h3>Karachi, Pakistan</h3>
+
+        <p>
+          Cooling demand is already high and is likely to remain
+          a significant challenge as temperatures continue to rise.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        See response →
+      </button>
+
+    </div>
+
+
+    <div class="flip-card-back">
+
+      <div>
+        <p class="card-label">Local Response</p>
+
+        <h3>Efficiency + affordability</h3>
+
+        <p>
+          Improve building and cooling efficiency while addressing
+          affordability so that higher energy needs do not deepen
+          existing inequalities.
+        </p>
+      </div>
+
+      <button class="flip-button" type="button">
+        ← Back
+      </button>
+
+    </div>
+
+  </div>
+
+</article>
+
+    </div>
+
+  </div>
+
+
+  <!-- TAKEAWAY -->
+  <div class="page-container">
+
+    <div class="story-conclusion">
+
+  <p class="conclusion-label">
+    The Takeaway
+  </p>
+
+  <p class="conclusion-text">
+    There is no one-size-fits-all cooling strategy. Cities need
+    responses that reflect both their current burden and the pressures
+    emerging under higher warming.
+  </p>
+
+</div>
+
   </div>
 
 </section>
@@ -349,6 +582,6 @@
       </p>
     </div>
   </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
