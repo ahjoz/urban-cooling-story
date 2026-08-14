@@ -138,36 +138,57 @@ h1 {
   overflow: hidden;
   background: #ffffff;
 }
-.regional-followup {
+.regional-two-column,
+.regional-secondary-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1.7fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.regional-secondary-row {
   margin-top: 36px;
   padding-top: 28px;
   border-top: 1px solid var(--border);
 }
 
-.followup-text {
-  max-width: 620px;
-  margin-bottom: 18px;
+.regional-secondary-copy h3 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  line-height: 1.15;
 }
 
-.followup-text h3 {
-  margin-bottom: 8px;
-  font-size: 1.35rem;
+.regional-secondary-copy p {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-.followup-text p {
-  margin-bottom: 0;
-  color: var(--muted);
+/* D02 Tableau dashboard = 1000 × 460 */
+.regional-line-chart {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
 }
-.regional-layout {
-  align-items: start;
+
+.regional-line-chart tableau-viz {
+  display: block;
+  width: 100%;
+  height: 360px;
+}
+
+.regional-takeaway {
+  margin: 12px 0 0;
+  font-weight: 600;
 }
 
 .compact-chart {
+  width: 100%;
   height: 250px;
   overflow: hidden;
 }
 
 .compact-chart tableau-viz {
+  display: block;
   width: 100%;
   height: 250px;
 }
@@ -218,22 +239,9 @@ tableau-viz {
 
 .final-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+  grid-template-columns: minmax(300px, 0.75fr) minmax(620px, 1.35fr);
   gap: 70px;
   align-items: center;
-}
-
-.response-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.response-card {
-  min-height: 180px;
-  padding: 28px;
-  background: var(--card);
-  text-align: center;
 }
 
 .response-card h3 {
@@ -293,12 +301,20 @@ tableau-viz {
   .two-column,
   .scatter-layout,
   .split-heading,
-  .final-grid {
+  .final-grid,
+  .regional-two-column,
+  .regional-secondary-row {
     grid-template-columns: 1fr;
   }
 
-  .response-grid {
-    grid-template-columns: 1fr;
+  .regional-two-column,
+  .regional-secondary-row {
+    gap: 22px;
+  }
+
+  .regional-secondary-row {
+    margin-top: 50px;
+    padding-top: 36px;
   }
 
   .story-section {
@@ -308,4 +324,480 @@ tableau-viz {
   .hero {
     padding-top: 45px;
   }
+}
+/* ==========================================
+   PRESSURE QUADRANT
+========================================== */
+
+.pressure-quadrant {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 300px);
+
+  row-gap: 100px;
+  column-gap: 105px;
+
+  width: 100%;
+  max-width: 800px;
+
+  margin-left: auto;
+
+  padding: 35px 18px;
+}
+
+
+/* CARD POSITIONS */
+
+.emerging-card {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.compounding-card {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.lower-card {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.persistent-card {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+/* Make cards fill each quadrant */
+
+.pressure-quadrant .flip-card,
+.pressure-quadrant .flip-card-inner {
+  min-height: 300px;
+}
+
+/* ==========================================
+   VERTICAL AXIS
+========================================== */
+
+.vertical-axis {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+  bottom: 0;
+
+  width: 70px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+  pointer-events: none;
+}
+
+
+.vertical-axis-line {
+  position: absolute;
+
+  left: 50%;
+  top: 35px;
+  bottom: 35px;
+
+  width: 1px;
+
+  background: #555555;
+}
+
+
+/* top arrow */
+
+.vertical-axis-line::before {
+  content: "";
+
+  position: absolute;
+
+  top: -1px;
+  left: 50%;
+
+  transform: translate(-50%, -100%);
+
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 9px solid #555555;
+}
+
+
+.vertical-axis-title {
+  position: absolute;
+
+  left: 50%;
+  top: 67%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-90deg);
+
+  padding: 7px 12px;
+
+  background: white;
+
+  white-space: nowrap;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+.vertical-axis .axis-high {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+
+.vertical-axis .axis-low {
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  transform: translate(-50%, 50%);
+}
+
+/* ==========================================
+   HORIZONTAL AXIS
+========================================== */
+
+.horizontal-axis {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  height: 50px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+.horizontal-axis-line {
+  height: 1px;
+
+  background: #555555;
+
+  flex: 1;
+}
+
+
+.left-line {
+  margin-left: 40px;
+}
+
+
+.right-line {
+  margin-right: 40px;
+}
+
+
+.horizontal-axis-title {
+  margin: 0 18px;
+  padding: 8px 16px;
+
+  background: white;
+
+  white-space: nowrap;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  position: relative;
+  z-index: 10;
+}
+
+
+.horizontal-axis .axis-low {
+  position: absolute;
+
+  left: 0;
+
+  transform: translateX(-5px);
+}
+
+
+.horizontal-axis .axis-high {
+  position: absolute;
+
+  right: 0;
+
+  transform: translateX(5px);
+}
+
+
+.axis-high,
+.axis-low {
+  padding: 4px 7px;
+
+  background: white;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #777777;
+}
+
+.right-line {
+  margin-right: 40px;
+  position: relative;
+}
+
+.right-line::after {
+  content: "";
+
+  position: absolute;
+
+  right: -1px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 9px solid #555555;
+}
+
+.response-card.flip-card {
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.flip-card {
+  position: relative;
+  min-height: 300px;
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 26px;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pressure-quadrant .flip-card-front,
+.pressure-quadrant .flip-card-back {
+  padding: 22px;
+}
+
+.flip-card-front {
+  border: 1px solid #dedbd5;
+}
+
+.flip-card-back {
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+/* ==========================================
+   PRESSURE CATEGORY COLORS
+========================================== */
+
+/* Compounding Pressure */
+
+.flip-card.compounding .flip-card-front {
+  background: #f3e3de;
+}
+
+.flip-card.compounding .flip-card-back {
+  background: #c96f54;
+}
+
+
+/* Emerging Pressure */
+
+.flip-card.emerging .flip-card-front {
+  background: #f1e8d8;
+}
+
+.flip-card.emerging .flip-card-back {
+  background: #c79552;
+}
+
+
+/* Persistent Pressure */
+
+.flip-card.persistent .flip-card-front {
+  background: #e1e8ec;
+}
+
+.flip-card.persistent .flip-card-back {
+  background: #668aa3;
+}
+
+
+/* Lower Relative Pressure */
+
+.flip-card.lower-pressure .flip-card-front {
+  background: #e4e9e4;
+}
+
+.flip-card.lower-pressure .flip-card-back {
+  background: #728576;
+}
+
+.card-label {
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8178;
+}
+/* Category-specific front labels */
+
+.compounding .flip-card-front .card-label {
+  color: #a6533d;
+}
+
+.emerging .flip-card-front .card-label {
+  color: #8f6a32;
+}
+
+.persistent .flip-card-front .card-label {
+  color: #4e7188;
+}
+
+.lower-pressure .flip-card-front .card-label {
+  color: #5f7464;
+}
+
+.flip-card-back .card-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.flip-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.flip-card p {
+  line-height: 1.55;
+}
+
+.flip-card-front p:not(.card-label) {
+  color: #625f5a;
+}
+
+.flip-card-back p:not(.card-label) {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.flip-button {
+  align-self: flex-start;
+  margin-top: 16px;
+
+  padding: 9px 16px;
+
+  border: 1px solid #b9b4ad;
+  border-radius: 100px;
+
+  background: transparent;
+  color: #333333;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.flip-button:hover {
+  border-color: #d86649;
+  color: #d86649;
+}
+
+.flip-card-back .flip-button {
+  border-color: rgba(255, 255, 255, 0.65);
+  color: #ffffff;
+}
+
+.flip-card-back .flip-button:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+@media (max-width: 850px) {
+
+  .pressure-quadrant {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    gap: 24px;
+
+    padding: 0;
+
+    margin-top: 40px;
+  }
+
+
+  .emerging-card,
+  .compounding-card,
+  .lower-card,
+  .persistent-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+
+  .vertical-axis,
+  .horizontal-axis {
+    display: none;
+  }
+
+
+  .pressure-quadrant .flip-card,
+  .pressure-quadrant .flip-card-inner {
+    min-height: 400px;
+  }
+
 }
